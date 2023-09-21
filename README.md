@@ -1,5 +1,3 @@
-Certainly! Here's a README for your GTK system tray weather application code:
-
 ---
 
 # GTK System Tray Weather Application
