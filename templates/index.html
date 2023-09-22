@@ -4,11 +4,15 @@
     <title>Weather App</title>
 </head>
 <body>
-    <h1>Weather Information</h1>
-    <h3 >{{ weather }}</h3>
-    <p></p>
-    <p>If you want to interact with the application itself, <a href="https://github.com/Abbyfade/Weather-App/blob/main/README.md">Click here</a>
-         to see how to do that.</p>
-    <p>Thank you!</p>
+    <h1>Weather App</h1>
+    <form method="POST" action="/get_weather">
+        <label for="city">Enter your city:</label>
+        <input type="text" name="city" id="city" required>
+        <button type="submit">Get Weather</button>
+    </form>
+    {% if city %}
+    <h2>Weather in {{ city }}</h2>
+    <p >{{ weather }}</p>
+    {% endif %}
 </body>
 </html>
