@@ -1,4 +1,2 @@
 flask==1.0.2
-urllib3==1.22
-requests==2.31.0
 
