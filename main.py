@@ -18,8 +18,7 @@ user_city = get_user_city()
 
 def get_weather_data():
     response = requests.get(
-            f"http://api.weatherstack.com/current?access_key={API_ID}&query={user_city}"
-        )
+            f"http://api.weatherstack.com/current?access_key={API_ID}&query={user_city}")
         
     # Check if the request was successful
     if response.status_code == 200:
