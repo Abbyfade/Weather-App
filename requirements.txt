@@ -1,4 +1,2 @@
 flask
-pycairo
-pygobject
 requests
