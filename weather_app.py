@@ -5,7 +5,7 @@ import requests
 import signal
 import time
 
-APP_ID = "baa74facf29c069884397a4415b7dc4b"
+API_ID = "fc86edb97615691828d6086e50a9810e"
 
 def get_user_city():
     try:
@@ -33,13 +33,27 @@ class WeatherTrayApp:
 
     def fetch_weather_data(self):
         try:
+            # response = requests.get(
+            #     f"http://api.openweathermap.org/data/2.5/weather?q={user_city}&appid={API_ID}&units=metric"
+            # )
+            # data = response.json()
+            # weather = data["weather"][0]["description"]
+            # temperature = data["main"]["temp"]
+            # return f"Weather: {weather.capitalize()}\nTemperature: {temperature}°C"
             response = requests.get(
-                f"http://api.openweathermap.org/data/2.5/weather?q={user_city}&appid={APP_ID}&units=metric"
+            f"http://api.weatherstack.com/current?access_key={API_ID}&query={user_city}"
             )
-            data = response.json()
-            weather = data["weather"][0]["description"]
-            temperature = data["main"]["temp"]
-            return f"Weather: {weather.capitalize()}\nTemperature: {temperature}°C"
+        
+            # Check if the request was successful
+            if response.status_code == 200:
+                data = response.json()
+                if "current" in data:
+                    weather = data["current"]["weather_descriptions"][0]
+                    temperature = data["current"]["temperature"]
+                    return f"Weather: {weather}\nTemperature: {temperature}°C"
+                else:
+                    return "Weather data not available."
+            
         except Exception as e:
             return str(e)
 
