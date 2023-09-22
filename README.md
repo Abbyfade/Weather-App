@@ -23,6 +23,8 @@ You can install the required libraries using pip:
 ```bash
 pip install pygobject requests
 ```
+If you are having issues installing using pip, click on this article to see how to install pygobject on your computer.
+https://pygobject.readthedocs.io/en/latest/getting_started.html
 
 ## Usage
 
