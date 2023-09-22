@@ -42,7 +42,7 @@ python weather_app.py
 
 You can configure the application by modifying the following variables in the code:
 
-- `APP_ID`: Replace with your OpenWeatherMap API key.
+- `API_ID`: Replace with your OpenWeatherMap API key.
 
 ## Troubleshooting
 
