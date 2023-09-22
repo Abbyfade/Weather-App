@@ -44,7 +44,7 @@ python weather_app.py
 
 You can configure the application by modifying the following variables in the code:
 
-- `API_ID`: Replace with your OpenWeatherMap API key.
+- `API_ID`: Replace with your Weatherstack API key.
 
 ## Troubleshooting
 
